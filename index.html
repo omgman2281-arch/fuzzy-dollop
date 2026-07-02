@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор пробега маршрута</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero">
+        <p class="eyebrow">Маршрут • расстояния • пробег</p>
+        <h1>Калькулятор пробега по маршруту</h1>
+        <p class="hero__text">
+          Добавьте точки маршрута по порядку, а сайт рассчитает расстояние между
+          сегментами и общий пробег в километрах и милях.
+        </p>
+      </section>
+
+      <section class="panel route-form" aria-labelledby="point-form-title">
+        <div>
+          <h2 id="point-form-title">Новая точка</h2>
+          <p class="muted">Введите название и координаты остановки.</p>
+        </div>
+        <form id="point-form" class="form">
+          <label>
+            Название точки
+            <input id="point-name" type="text" placeholder="Например: Склад" required />
+          </label>
+          <label>
+            Широта
+            <input id="point-lat" type="number" min="-90" max="90" step="any" placeholder="55.7558" required />
+          </label>
+          <label>
+            Долгота
+            <input id="point-lng" type="number" min="-180" max="180" step="any" placeholder="37.6173" required />
+          </label>
+          <button type="submit">Добавить точку</button>
+        </form>
+      </section>
+
+      <section class="stats" aria-label="Итоги маршрута">
+        <article class="stat-card">
+          <span>Всего точек</span>
+          <strong id="points-count">0</strong>
+        </article>
+        <article class="stat-card stat-card--accent">
+          <span>Общий пробег</span>
+          <strong><span id="total-km">0.00</span> км</strong>
+        </article>
+        <article class="stat-card">
+          <span>В милях</span>
+          <strong><span id="total-mi">0.00</span> mi</strong>
+        </article>
+      </section>
+
+      <section class="panel route-list" aria-labelledby="route-title">
+        <div class="section-header">
+          <div>
+            <h2 id="route-title">Выстроенный маршрут</h2>
+            <p class="muted">Перемещайте точки вверх и вниз, чтобы уточнить порядок.</p>
+          </div>
+          <div class="actions">
+            <button id="load-demo" type="button" class="secondary">Демо-маршрут</button>
+            <button id="clear-route" type="button" class="danger">Очистить</button>
+          </div>
+        </div>
+
+        <ol id="points-list" class="points-list"></ol>
+        <p id="empty-state" class="empty-state">Маршрут пока пуст. Добавьте минимум две точки для расчёта пробега.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="segments-title">
+        <h2 id="segments-title">Сегменты</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Откуда</th>
+                <th>Куда</th>
+                <th>Расстояние</th>
+              </tr>
+            </thead>
+            <tbody id="segments-table"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
