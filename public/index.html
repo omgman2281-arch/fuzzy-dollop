@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Цены на бензин в Озерске</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">Озерск · Челябинская область</p>
+      <h1>Парсер актуальных цен на бензин</h1>
+      <p>Сервис получает данные с открытой страницы FuelPrice и показывает лучшие предложения и цены по АЗС.</p>
+      <button id="refresh">Обновить цены</button>
+    </section>
+
+    <section class="panel">
+      <div class="meta" id="meta">Загрузка...</div>
+      <div class="cards" id="bestPrices"></div>
+    </section>
+
+    <section class="panel">
+      <h2>АЗС и виды топлива</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>АЗС</th><th>Топливо</th><th>Цена</th><th>Обновлено</th></tr></thead>
+          <tbody id="stations"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
