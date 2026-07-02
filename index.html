@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Адаптивный калькулятор</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-label="Калькулятор">
+      <section class="calculator">
+        <div class="display" aria-live="polite">
+          <div class="display__expression" id="expression">0</div>
+          <div class="display__result" id="result">0</div>
+        </div>
+
+        <div class="keys" aria-label="Кнопки калькулятора">
+          <button class="key key--utility" type="button" data-action="clear">C</button>
+          <button class="key key--utility" type="button" data-action="delete">⌫</button>
+          <button class="key key--operator" type="button" data-value="%">%</button>
+          <button class="key key--operator" type="button" data-value="/">÷</button>
+
+          <button class="key" type="button" data-value="7">7</button>
+          <button class="key" type="button" data-value="8">8</button>
+          <button class="key" type="button" data-value="9">9</button>
+          <button class="key key--operator" type="button" data-value="*">×</button>
+
+          <button class="key" type="button" data-value="4">4</button>
+          <button class="key" type="button" data-value="5">5</button>
+          <button class="key" type="button" data-value="6">6</button>
+          <button class="key key--operator" type="button" data-value="-">−</button>
+
+          <button class="key" type="button" data-value="1">1</button>
+          <button class="key" type="button" data-value="2">2</button>
+          <button class="key" type="button" data-value="3">3</button>
+          <button class="key key--operator" type="button" data-value="+">+</button>
+
+          <button class="key key--zero" type="button" data-value="0">0</button>
+          <button class="key" type="button" data-value=".">.</button>
+          <button class="key key--equals" type="button" data-action="calculate">=</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
